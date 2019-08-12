@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="PLForms.ShowOrdersList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             xmlns:local="clr-namespace:PLForms"
+             d:DesignHeight="499" d:DesignWidth="692">
+    <UserControl.Resources>
+        <local:BranchNumber_To_BranchName  x:Key="BranchNumber_To_BranchName"/>
+        <local:Client_To_ClientName  x:Key="Client_To_ClientName"/>
+        <local:OrderId_To_Profit  x:Key="OrderId_To_Profit"/>
+        <local:Client_To_ClientAddress x:Key="Client_To_ClientAddress"/>
+        <local:Client_To_ClientCreditCard x:Key="Client_To_ClientCreditCard"/>
+    </UserControl.Resources>
+    <Grid>
+        <Grid>
+            <DataGrid Name="show" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="449" 
+                    AutoGenerateColumns="False" Margin="99,-5,10,0" >
+                <DataGrid.Columns>
+                    <DataGridTextColumn x:Name="ID" Binding="{Binding orderID}" Header="Id" Width="0.5*" />
+                    <DataGridTextColumn x:Name="BranchName"  Binding="{Binding BranchNumber, Converter={StaticResource BranchNumber_To_BranchName  }}" Header="Branch Name" Width="*"  />
+                    <DataGridTextColumn x:Name="Address" Binding="{Binding client,Converter={StaticResource Client_To_ClientAddress }}" Header="Address order" Width="*"/>
+                    <DataGridTextColumn x:Name="Name" Binding="{Binding client,Converter={StaticResource Client_To_ClientName}}" Header="Client Name" Width="0.8*" />
+                    <DataGridTextColumn x:Name="CreditCard" Binding="{Binding client,Converter={StaticResource Client_To_ClientCreditCard}}" Header="Client credit card" Width="0.8*" />
+                    <DataGridTextColumn x:Name="Situation" Binding="{Binding OS}" Header="Situation" Width="0.6*" />
+                    <DataGridTextColumn x:Name="Date" Binding="{Binding date}" Header="Order Date" Width="*"/>
+                    <DataGridTextColumn x:Name="Profit" Binding="{Binding orderID, Converter={StaticResource OrderId_To_Profit}}" Header="Profit" Width="0.6*" />
+
+                </DataGrid.Columns>
+            </DataGrid>
+            <StackPanel>
+                <RadioButton x:Name="All_Orders" Content="All Orders" IsChecked="True" Checked="All_Orders_Checked" Background="White" Foreground="White"/>
+                <RadioButton x:Name="Ordered_Orders" Content="Ordered Orders"  Background="White" Foreground="White" Checked="Ordered_Orders_Checked" />
+                <RadioButton x:Name="Sent_Orders" Content="Sent Orders" Background="White" Foreground="White" Checked="Sent_Orders_Checked" />
+                <RadioButton x:Name="Cancel_Order" Content="Cancel Orders" Background="White" Foreground="White" Checked="Cancel_Order_Checked" />
+            </StackPanel>
+
+
+        </Grid>
+
+    </Grid>
+</UserControl>

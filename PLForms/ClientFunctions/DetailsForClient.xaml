@@ -1,0 +1,34 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:BE="clr-namespace:BE;assembly=BE" mc:Ignorable="d" x:Class="PLForms.DetailsForClient"
+        Title="DetailsForClient" Height="300" Width="400">
+    <Grid>
+        <Grid x:Name="grid1" VerticalAlignment="Top" Margin="23,40,0,0" HorizontalAlignment="Left"  Width="266">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Label VerticalAlignment="Center" Grid.Row="0" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Address:"/>
+            <Label VerticalAlignment="Center" Grid.Row="1" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="age:"/>
+            <Label VerticalAlignment="Center" Grid.Row="2" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Credit Card Number:"/>
+            <Label VerticalAlignment="Center" Grid.Row="3" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Current Location:"/>
+            <Label VerticalAlignment="Center" Grid.Row="4" Margin="3" HorizontalAlignment="Left" Grid.Column="0" Content="Name:"/>
+            <Label x:Name="AdressLabel" Grid.Column="1" HorizontalAlignment="Left" Margin="10,5,-47,0" VerticalAlignment="Top" Width="120" Content="{Binding Address, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Height="27"/>
+            <Label x:Name="AgeLabel" Grid.Column="1" HorizontalAlignment="Left" Margin="10,5,-51,0" Grid.Row="1" Width="120" Content="{Binding age, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+            <Label x:Name="CreditCardNumberLabel" Grid.Column="1" HorizontalAlignment="Left" Margin="10,2,-49,3" Grid.Row="2" Width="120" Content="{Binding CreditCardNumber, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+            <Label x:Name="CurrentLocationLabel" Grid.Column="1" HorizontalAlignment="Left" Margin="10,2,-49,3" Grid.Row="3" Width="120" Content="{Binding CurrentLocation, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+            <Label x:Name="NameLabel" Grid.Column="1" HorizontalAlignment="Left" Margin="10,2,-49,3" Grid.Row="4" Width="120" Content="{Binding Name, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"/>
+
+
+        </Grid>
+
+    </Grid>
+</Window>

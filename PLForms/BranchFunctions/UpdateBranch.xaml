@@ -1,0 +1,125 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:BE="clr-namespace:BE;assembly=BE" x:Class="PLForms.UpdateBranch" 
+             mc:Ignorable="d" 
+              Width="auto" Height="auto"  >
+    <Grid Height="381" Width="434">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="auto" MinHeight="323"/>
+
+        </Grid.RowDefinitions>
+        <Label Content="Enter the branch number here:" HorizontalAlignment="Left" Margin="10,19,0,0" VerticalAlignment="Top" Height="26" Width="172" Background="White"/>
+        <TextBox x:Name="NumberEnter" HorizontalAlignment="Left" Height="23" Margin="194,22,-67,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="CheckAccess" Content="Select this branch" HorizontalAlignment="Left" Margin="328,22,0,0" VerticalAlignment="Top" Width="100" Click="Enable_Button_Click" Height="22"/>
+        <Grid x:Name="grid1" Margin="0,0,50,0" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid x:Name="NameGrid"  HorizontalAlignment="Left" Margin="0,10,0,0" VerticalAlignment="Top" Grid.RowSpan="2" Width="221">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Content="Name:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center" Background="White"/>
+                <TextBox x:Name="nameTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="0" Text="{Binding Name, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            </Grid>
+
+            <Grid x:Name="AddressGrid"  HorizontalAlignment="Left" Margin="0,11,0,0" VerticalAlignment="Top" Grid.Row="1" Grid.RowSpan="2" Width="235">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Content="Address:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center" Background="White"/>
+                <TextBox x:Name="addressTextBox" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="0" Text="{Binding Address, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+            </Grid>
+
+            <Grid x:Name="KashrutGrid"  HorizontalAlignment="Left" Margin="0,10,0,0" Grid.Row="2" VerticalAlignment="Top" Grid.RowSpan="2" Width="235">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Kashrut Level:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="0" VerticalAlignment="Center" Background="White"/>
+                <ComboBox x:Name="kashrutLevelComboBox" Grid.Column="1" SelectedItem ="{Binding KashrutLevel}"  HorizontalAlignment="Left" Height="Auto" Margin="3" VerticalAlignment="Center" Width="120" />
+            </Grid>
+
+            <Grid x:Name="WorkersGrid"  HorizontalAlignment="Left" Margin="10,6,0,0" Grid.Row="3" VerticalAlignment="Top" Width="179">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="103"/>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="36"/>
+                    <ColumnDefinition Width="198"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Content="Workers Amount:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,3,0,3" Grid.Row="0" VerticalAlignment="Center" Grid.ColumnSpan="2" Height="26" Width="103" Background="White"/>
+                <TextBox x:Name="workersAmountTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="24" Margin="0,5,0,3" Grid.Row="0" Text="{Binding WorkersAmount, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="36" IsEnabled="False"/>
+                <Button Content="^" Grid.Column="3" HorizontalAlignment="Left" Margin="0,5,0,0" VerticalAlignment="Top" Width="20" Height="22" RenderTransformOrigin="0.59,0.455" Click="WorkersAmoutUp"/>
+                <Button Content="˅" Grid.Column="1" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="20" Height="22" Margin="0,5,0,0" Click="WorkersAmountDown"/>
+            </Grid>
+
+            <Grid x:Name="PhoneNumberGrid" HorizontalAlignment="Left" Margin="0,10,0,0" Grid.Row="4" VerticalAlignment="Top" Width="338">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="93"/>
+                    <ColumnDefinition Width="39"/>
+                    <ColumnDefinition Width="Auto" MinWidth="205"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Content="Phone Number:" Grid.Column="0" HorizontalAlignment="Left" Margin="3,3,0,3" Grid.Row="0" VerticalAlignment="Center" Grid.ColumnSpan="2" Height="26" Width="93" Background="White"/>
+                <TextBox x:Name="phoneNumberTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="24" Margin="3,4,0,4" Grid.Row="0" Text="{Binding PhoneNumber, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+                <ComboBox x:Name="AreaCode" Grid.Column="1" HorizontalAlignment="Left" Margin="2,4,0,0" VerticalAlignment="Top" Width="35">
+                    <ComboBoxItem Content="02"/>
+                    <ComboBoxItem Content="03"/>
+                    <ComboBoxItem Content="04"/>
+                    <ComboBoxItem Content="08"/>
+                    <ComboBoxItem Content="09"/>
+                    <ComboBoxItem Content="077"/>
+                </ComboBox>
+            </Grid>
+            <Button Content="update branch" HorizontalAlignment="Left" Margin="35,10,0,0" VerticalAlignment="Top" Width="121" Height="22" Grid.Row="5" Click="Update_Click">
+                <Button.Style>
+                    <Style>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=nameTextBox, Path=Text}" Value="">
+                                <Setter Property="Button.IsEnabled" Value="False"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding ElementName=addressTextBox, Path=Text}" Value="">
+                                <Setter Property="Button.IsEnabled" Value="False"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding ElementName=phoneNumberTextBox, Path=Text}" Value="">
+                                <Setter Property="Button.IsEnabled" Value="False"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding ElementName=workersAmountTextBox, Path=Text}" Value="0">
+                                <Setter Property="Button.IsEnabled" Value="False"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding ElementName=AreaCode, Path=SelectedItem}" Value="">
+                                <Setter Property="Button.IsEnabled" Value="False"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+        </Grid>
+
+
+    </Grid>
+
+</UserControl>

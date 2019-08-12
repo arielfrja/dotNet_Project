@@ -1,0 +1,21 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:BE="clr-namespace:BE;assembly=BE" mc:Ignorable="d" x:Class="PLForms.ClientFunctions.DishesOfOrder"
+        Title="DishesOfOrder" Height="300" Width="414"
+    xmlns:local="clr-namespace:PLForms">   
+    <Window.Resources>
+        <local:DishNumber_To_DishName x:Key="DishNumber_To_DishName"/>
+    </Window.Resources>
+    <Grid>
+        <DataGrid x:Name="ordered_DishDataGrid" RowDetailsVisibilityMode="VisibleWhenSelected" ItemsSource="{Binding}" EnableRowVirtualization="True" AutoGenerateColumns="False" Margin="10,0"> 
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="amountSameDishesColumn" Width="*" Header="Amount Same Dishes" Binding="{Binding AmountSameDishes}"/>
+                <DataGridTextColumn x:Name="dishNumberColumn" Width="*" Header="Dish Name" Binding="{Binding DishNumber,Converter={StaticResource DishNumber_To_DishName}}"/>
+                <DataGridTextColumn x:Name="oDSColumn" Width="*" Header="Dish situation" Binding="{Binding ODS}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+    </Grid>
+</Window>

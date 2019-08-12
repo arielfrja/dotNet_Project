@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="PLForms.DishFunctions.ShowDishesList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d"   
+     
+             d:DesignHeight="449" d:DesignWidth="692">
+    <Grid>
+        <DataGrid Name="show" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="449" 
+                    AutoGenerateColumns="False" Margin="99,-5,10,0" >
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="ID" Binding="{Binding DishID}" Header="Id" Width="0.5*" />
+                <DataGridTextColumn x:Name="Name"  Binding="{Binding DishName }" Header="Name" Width="*"  />
+                <DataGridTextColumn x:Name="Price" Binding="{Binding DishPrice}" Header="Price" Width="*"/>
+                <DataGridTextColumn x:Name="Size" Binding="{Binding DishSize}" Header="Size" Width="*"/>
+                <DataGridTextColumn x:Name="PreparingTime" Binding="{Binding PreparingTime}" Header="PreparingTime" Width="*"/>
+                <DataGridTextColumn x:Name="Kashrut" Binding="{Binding KashrutLevel}" Header="Kashrut" Width="0.8*" />
+                <DataGridTextColumn x:Name="Situation" Binding="{Binding BS}" Header="Situation" Width="0.6*" />
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel>
+            <RadioButton x:Name="All_Dishes" Content="All Dishes" IsChecked="True" Checked="All_Dishes_Checked"  Foreground="White"/>
+            <RadioButton x:Name="Exist_Dishes" Content="Exist Dishes" Checked="Exist_Dishes_Checked" Foreground="White" />
+            <RadioButton x:Name="Close_Dishes" Content="Close Dishes" Checked="Close_Dishes_Checked" Foreground="White"  />
+        </StackPanel>
+
+
+    </Grid>
+</UserControl>

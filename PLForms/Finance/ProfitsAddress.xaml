@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="PLForms.Finance.ProfitsAddress"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Width="494" Height="303">
+    <Grid Margin="0,0,10,0">
+        <DataGrid x:Name="AddressDataGrid" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ItemsSource="{Binding}" IsReadOnly="True" SelectionChanged="AddressDataGrid_SelectionChanged" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="Rank" Binding="{Binding Rank}" Header="Rank" />
+                <DataGridTextColumn x:Name="Address" Binding="{Binding ClientAddress}" Header="Client Address" Width="*"/>
+                <DataGridTextColumn x:Name="Profits" Binding="{Binding Profits}" Header="Profits" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</UserControl>

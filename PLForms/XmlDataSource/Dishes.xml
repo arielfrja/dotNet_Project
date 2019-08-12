@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dishes>
+  <Dish>
+    <ID>1</ID>
+    <Name>asdw</Name>
+    <Price>120</Price>
+    <Size>2</Size>
+    <DishSituation>EXIST</DishSituation>
+    <KashrutLevel>MEDIUM</KashrutLevel>
+    <PreparingTime>00:01:00</PreparingTime>
+  </Dish>
+  <Dish>
+    <ID>2</ID>
+    <Name>sssd</Name>
+    <Price>12</Price>
+    <Size>3</Size>
+    <DishSituation>EXIST</DishSituation>
+    <KashrutLevel>LOW</KashrutLevel>
+    <PreparingTime>00:01:00</PreparingTime>
+  </Dish>
+  <Dish>
+    <ID>3</ID>
+    <Name>asdasd</Name>
+    <Price>123</Price>
+    <Size>23</Size>
+    <DishSituation>EXIST</DishSituation>
+    <KashrutLevel>LOW</KashrutLevel>
+    <PreparingTime>00:01:00</PreparingTime>
+  </Dish>
+</Dishes>

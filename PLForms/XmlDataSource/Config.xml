@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Config>
+  <BranchCounter>8</BranchCounter>
+  <DishCounter>4</DishCounter>
+  <OrderCounter>17</OrderCounter>
+  <OrderedDishes_Counter>22</OrderedDishes_Counter>
+</Config>

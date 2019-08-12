@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="PLForms.ProfitsByKashrut"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Height="351" Width="572">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="FliterSelectButton"  Content="select this filter" HorizontalAlignment="Left" Margin="294,10,0,0" VerticalAlignment="Top" Width="268" Height="28"/>
+        <ComboBox x:Name="FilterComboBox" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="268" Height="28" SelectionChanged="FilterComboBox_SelectionChanged" >
+            <ComboBoxItem x:Name="AddressFilter" Content="Address">
+                <ComboBoxItem.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0"/>
+                        <GradientStop Color="Gray" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBoxItem.Background>
+            </ComboBoxItem>
+            <ComboBoxItem x:Name="KashrutFilter" Content="Kashrut" >
+                <ComboBoxItem.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0"/>
+                        <GradientStop Color="Gray" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBoxItem.Background>
+            </ComboBoxItem>
+            <ComboBoxItem x:Name="Time" Content="Time" >
+                <ComboBoxItem.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0"/>
+                        <GradientStop Color="Gray" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBoxItem.Background>
+            </ComboBoxItem>
+            <ComboBoxItem x:Name="BranchFilter" Content="Branch" >
+                <ComboBoxItem.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0"/>
+                        <GradientStop Color="Gray" Offset="1"/>
+                    </LinearGradientBrush>
+                </ComboBoxItem.Background>
+            </ComboBoxItem>
+        </ComboBox>
+        <Grid x:Name="Profits_Screen" HorizontalAlignment="Left" Height="195" Margin="0,100,0,0" VerticalAlignment="Top" Width="552">
+        </Grid>
+
+
+    </Grid>
+</UserControl>

@@ -1,0 +1,50 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="d" x:Class="PLForms.StaffMenu"
+        Title="StaffMenu" Height="500" Width="700">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="21"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Menu HorizontalAlignment="Stretch" VerticalAlignment="Top" Width="692">
+            <MenuItem x:Name="Branch_" Header="Branch" >
+                <MenuItem x:Name="Add_branch" Header="Add branch" Click="Add_branch_Click"/>
+                <MenuItem x:Name="Remove_branch" Header="Remove branch" Click="Remove_branch_Click"/>
+                <MenuItem x:Name="Update_branch" Header="Update branch" Click="Update_branch_Click"/>
+                <MenuItem x:Name="show_branches_list" Header="show branches list" Click="show_branches_list_Click"/>
+            </MenuItem>
+            <MenuItem Header="Dish">
+                <MenuItem Header="Add Dish" Click="Add_dish_Click"/>
+                <MenuItem Header="Remove Dish" Click="Remove_dish_Click" />
+                <MenuItem Header="Update Dish" Click="Update_Dish_Click"  />
+                <MenuItem Header="show dishes list" Click="Show_Dishes_Click" />
+            </MenuItem>
+            <MenuItem Header="Order">
+                <MenuItem Header="Show orders list" Click="MenuItem_Click_2"/>
+            </MenuItem>
+            <MenuItem Header="Finances">
+
+                <MenuItem Header="Profits by" Click="MenuItem_Click_1"/>
+                <MenuItem Header="The most profitable credit card " Click="MenuItem_Click_3"/>
+
+            </MenuItem>
+            <MenuItem x:Name="AddUser" Header="Add user" Click="AddUser_Click" />
+            <MenuItem x:Name="Exit_to_main_menu" Header="Exit to main menu" Click="Exit_to_main_menu_Click"/>
+
+        </Menu>
+        <Grid x:Name="Screen" Grid.Row="1">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="86*"/>
+
+            </Grid.ColumnDefinitions>
+            <StackPanel x:Name="stack" HorizontalAlignment="Left" Height="88" Margin="195,56,0,0" VerticalAlignment="Top" Width="487" RenderTransformOrigin="0.482,0.487">
+                <TextBlock x:Name="branchMessage" Height="188" Text="The branch has been added successfully" Visibility="Hidden" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="22" FontWeight="Bold" FontFamily="Showcard Gothic" Foreground="#FFD49F9F"/>
+            </StackPanel>
+
+        </Grid>
+
+    </Grid>
+</Window>
